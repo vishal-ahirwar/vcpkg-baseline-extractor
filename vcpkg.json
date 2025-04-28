@@ -1,0 +1,24 @@
+{
+  "name": "baseline",
+  "version": "1.0.0",
+  "dependencies": [
+    "boost-process",
+    "cpr",
+    "7zip"
+  ],
+  "overrides": [
+    {
+      "name": "boost-process",
+      "version": "1.87.0"
+    },
+    {
+      "name": "cpr",
+      "version": "1.11.2#0"
+    },
+    {
+      "name":"7zip",
+      "version":"19.00#0"
+    }
+  ],
+  "builtin-baseline": "566f9496b7e00ee0cc00aca0ab90493d122d148a"
+}
