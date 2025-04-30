@@ -62,15 +62,18 @@ bool fetchBaseLine(const std::string &name, const std::string &version, std::str
                 baseLine = line.substr(0, index);
                 std::string version = line.substr(index, line.find(" ", index));
                 std::print("Package : {}, Version : {}, Baseline Commit : {}\n[{}]\n", name, version, baseLine, line);
-                break;
+                c.terminate();
+                return true;
             }
         }
         else if (line.find(first) != std::string::npos && line.find(version) != std::string::npos)
         {
             baseLine = line.substr(0, line.find(" "));
             std::print("Package : {}, Version : {}, Baseline Commit : {}\n[{}]\n", name, version, baseLine, line);
+            c.terminate();
+            return true;
         }
     }
     c.wait();
-    return c.exit_code() == 0;
+    return false;
 };
